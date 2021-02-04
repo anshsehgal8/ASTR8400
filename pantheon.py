@@ -13,8 +13,6 @@ z, mu_obs, error = np.loadtxt('dmr_data.csv', delimiter=',', skiprows=1, unpack=
 mu_obs = np.array(mu_obs)
 mu_obs += 19.365
 
-# omega_m = 0.3
-# omega_lambda = 0.7
 
 def calc_mu(omega_m, omega_lambda):
 	
@@ -46,7 +44,7 @@ def calc_mu(omega_m, omega_lambda):
 	chi_sq = round(chi_sq, 2)
 	return mu, residual, chi_sq
 
-mu_fitted, residual_fitted, chi_sq_fitted = calc_mu(0.3,0.7)
+mu_fitted, residual_fitted, chi_sq_fitted = calc_mu(0.26,0.74)
 mu_naive,  residual_naive,  chi_sq_naive  = calc_mu(1.0,0.0)
 
 fig = plt.figure(figsize=[8,6])
@@ -55,7 +53,7 @@ ax2 = fig.add_subplot(2,2,3)
 ax3 = fig.add_subplot(2,2,2)
 ax4 = fig.add_subplot(2,2,4)
 ax1.plot(z, mu_obs, marker='o', color='black', label='SN1a Pantheon')
-ax1.plot(z, mu_fitted, label=r'$\Omega_{\Lambda}$ = 0.7')
+ax1.plot(z, mu_fitted, label=r'$\Omega_{\Lambda}$ = 0.74, $\Omega_m$ = 0.26')
 text1 = r'$\chi^2$ / $\nu$ = {}'.format(chi_sq_fitted)
 ax1.text(0.012,42, text1)
 ax1.set_xscale('log')
