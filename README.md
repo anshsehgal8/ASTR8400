@@ -6,4 +6,4 @@
 ## HW 8  ------ > adot.py
 ## HW 9  ------ > friedmann.py
 ## HW 11 ------ > pantheon.py 
-(need to download csv file as "dmr_data.csv" 
+(need to download csv file as "dmr_data.csv")
